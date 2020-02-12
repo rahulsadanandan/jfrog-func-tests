@@ -9,7 +9,7 @@ class LoginPage extends Page {
 		usernameTextbox{ $('#login-form input[name="user"]') }
 		passwordTextbox{ $('#login-form input[name="password"]') }
 		loginButton{ $('#login-form #login') }
-		formErrorsDiv{ $('div .jf-form-errors') }
+		formErrorsDiv(wait: true) { $('div .jf-form-errors') }
 	}
 
 	static at = {

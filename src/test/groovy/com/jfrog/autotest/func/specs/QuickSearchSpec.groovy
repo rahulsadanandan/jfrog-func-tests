@@ -73,13 +73,13 @@ class QuickSearchSpec extends GebReportingSpec{
 		then: "Should be redirected to search results page with no results"
 		report("Artifactory Search Page")
 		SearchPage searchPage = at SearchPage
-		searchPage.verifyNoArtifactFoundToastMessage()
+		searchPage.verifyToastMessage(errorMessage)
 		searchPage.verifyBadSearchResults()
 
 		where:
-		badSearchTerm      | _
-		"asd asd"          | _
-		"sdfsdf"           | _
-		"hjhj"             | _
+		badSearchTerm      | errorMessage
+		"123"              | "No artifacts found"
+		",.."              | "No artifacts found"
+		"***"              | "Search term empty or containing only wildcards is not permitted"
 	}
 }

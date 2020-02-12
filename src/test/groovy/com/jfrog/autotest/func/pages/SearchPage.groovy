@@ -8,7 +8,7 @@ class SearchPage extends Page{
 	static url = ""
 	static content = {
 		searchPanelSelector{ $('.search-panel-selector') }
-		searchResultsItems(required: false){ $('div[ng-if="row.entity.downloadLink"]') }
+		searchResultsItems(required: false,wait: true){ $('div[ng-if="row.entity.downloadLink"]') }
 		toastMessageDiv(wait: true) { $('.toast-message div') }
 	}
 
@@ -26,8 +26,8 @@ class SearchPage extends Page{
 		true
 	}
 	
-	def verifyNoArtifactFoundToastMessage() {
-		assert toastMessageDiv.text().contains("No artifacts found")
+	def verifyToastMessage(message) {
+		assert toastMessageDiv.text().contains(message)
 		true
 	}
 	
