@@ -7,6 +7,14 @@ Java 8 or higher
 Gradle
 Artifactory OSS up and running
 ```
+### Test cases done
+```
+Login with a valid credential -> redirects to homepage
+Login with an invalid credential -> Show error message
+Perform a good quick search -> redirects to search results page with good results
+Perform a bad quick search -> show error message in toast and redirect to search results page with no results
+```
+
 
 ## Configuration
 
