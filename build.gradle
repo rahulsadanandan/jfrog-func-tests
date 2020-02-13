@@ -56,7 +56,6 @@ drivers.each { driver ->
 test {
 	dependsOn drivers.collect { tasks["${it}Test"] }
 	enabled = false
-	testLogging.showStandardStreams = true
 }
 
 tasks.withType(Test) {
