@@ -20,7 +20,7 @@ class QuickSearchSpec extends GebReportingSpec{
 		baseUrl= cfg.url
 	}
 
-	def "Perform a good quick search"(){
+	def "Perform some good quick searches"(){
 		given: "I opened the artifactory site"
 		to LoginPage
 		report("Artifactory Login Page")
@@ -50,7 +50,7 @@ class QuickSearchSpec extends GebReportingSpec{
 		"file"  | _
 	}
 
-	def "Perform a bad quick search"(){
+	def "Perform some bad quick searches"(){
 		given: "I opened the artifactory site"
 		to LoginPage
 		report("Artifactory Login Page")
