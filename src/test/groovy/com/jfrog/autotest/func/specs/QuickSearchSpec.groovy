@@ -28,10 +28,9 @@ class QuickSearchSpec extends GebReportingSpec{
 
 		when: "Enter valid Username & Password and submit"
 		loginPage.enterUsernameAndPassword(cfg.username, cfg.password)
-		report("Artifactory login page with username and password")
 		loginPage.clickOnLoginButton()
 
-		then: "The user redirected to Homepage"
+		then: "The user should redirect to Homepage"
 		report("Artifactory Home Page")
 		HomePage homePage = at HomePage
 
@@ -59,18 +58,17 @@ class QuickSearchSpec extends GebReportingSpec{
 
 		when: "Enter valid Username & Password and submit"
 		loginPage.enterUsernameAndPassword(cfg.username, cfg.password)
-		report("Artifactory login page with username and password")
 		loginPage.clickOnLoginButton()
 
-		then: "The user redirected to Homepage"
+		then: "The user should redirect to Homepage"
 		report("Artifactory Home Page")
 		HomePage homePage = at HomePage
 
-		when: "Enter a good search term in quick search and submit"
+		when: "Enter a bad search term in quick search and submit"
 		homePage.quickSearchModule.enterQuickSearchTerm(badSearchTerm)
 		homePage.quickSearchModule.clickQuickSearchButton()
 
-		then: "Should be redirected to search results page with no results"
+		then: "Should show error message in toast and redirect to search results page with no results"
 		report("Artifactory Search Page")
 		SearchPage searchPage = at SearchPage
 		searchPage.verifyToastMessage(errorMessage)

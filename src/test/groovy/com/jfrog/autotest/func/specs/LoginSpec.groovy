@@ -29,9 +29,8 @@ class LoginSpec extends GebReportingSpec {
 		report("Artifactory Login Page")
 		LoginPage loginPage = at LoginPage;
 
-		when: "Enter valid Username & Password"
+		when: "Enter a valid Username & Password"
 		loginPage.enterUsernameAndPassword(cfg.username, cfg.password)
-		report("Artifactory login page with username and password")
 		loginPage.clickOnLoginButton()
 
 		then: "Should redirect to Homepage"
@@ -45,9 +44,8 @@ class LoginSpec extends GebReportingSpec {
 		report("Artifactory Login Page")
 		LoginPage loginPage = at LoginPage;
 
-		when: "Enter valid Username & Password"
+		when: "Enter a valid Username & Password"
 		loginPage.enterUsernameAndPassword(cfg.username, "invalid")
-		report("Artifactory login page with username and password")
 		loginPage.clickOnLoginButton()
 
 		then: "Invalid Credentials error message should be shown"
